@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BloodWise - Blood Donation Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <div class="left-section">
+        <div class="logo">BloodWise</div>
+        <div class="animated-heart">&#10084;&#65039;</div>
+      </div>
+      <div class="quote">A Drop of Blood, A Flood of Love</div>
+      <!-- Sign Up Button now placed to the left of the menu block -->
+      <button class="signup-button">Sign Up</button>
+      <div class="menu-block">
+        <span class="menu-icon">☰</span>
+        <ul class="menu-dropdown">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#donate">Donate Blood</a></li>
+          <li><a href="#receive">Receive Blood</a></li>
+          <li><a href="#availability">Availability</a></li>
+          <li><a href="#compatibility">Compatibility</a></li>
+          <li><a href="#info">Blood Information</a></li>
+          <li><a href="#faq">FAQs</a></li>
+          <li><a href="#helpline">Helpline</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sign Up Modal -->
+  <div class="signup-modal" id="signup-modal">
+    <div class="signup-modal-content">
+      <span class="close-modal" id="close-modal">&times;</span>
+      <h2>Sign Up</h2>
+      <form class="signup-form">
+        <div class="form-field">
+          <label for="signup-contact">Email or Mobile:</label>
+          <input type="text" id="signup-contact" name="signup-contact" required>
+        </div>
+        <div class="form-field">
+          <label for="signup-password">Password:</label>
+          <input type="password" id="signup-password" name="signup-password" required>
+        </div>
+        <div class="form-field checkbox-field">
+          <input type="checkbox" id="terms" name="terms" required>
+          <label for="terms">I agree to the <a href="#">terms and conditions</a></label>
+        </div>
+        <div class="form-field full-width">
+          <button type="submit">Sign Up</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Overview Section -->
+  <section id="overview" class="section">
+    <h2 class="center-heading">Overview</h2>
+    <div class="overview-container">
+      <div class="overview-text">
+        <p>Welcome to BloodWise, your one-stop destination for information on blood donation, management, and awareness. Our mission is to bridge the gap between donors and recipients while ensuring that blood stocks are maintained and easily accessible during emergencies.</p>
+        <p>Blood donation is a vital, life-saving act. It not only provides a critical resource for those in need but also strengthens community bonds. By donating blood, you help save lives, support medical treatments, and contribute to a healthier society.</p>
+        <p>Explore our site to learn more about how you can contribute, find compatible donors or recipients, and educate yourself on safe practices and precautions related to blood donation.</p>
+      </div>
+      <div class="overview-image">
+        <img src="https://i.ibb.co/rGrK5KR5/blood11.png" alt="Blood Donation">
+      </div>
+    </div>
+  </section>
+
+  <!-- Donate Section with Form -->
+  <section id="donate" class="section">
+    <h2>Donate Blood</h2>
+    <p>Fill the below form to become a Donor.</p>
+    <form class="donor-form">
+      <div class="form-field">
+        <label for="donor-name">Name:</label>
+        <input type="text" id="donor-name" name="donor-name" required>
+      </div>
+      <div class="form-field">
+        <label for="donor-age">Age:</label>
+        <input type="number" id="donor-age" name="donor-age" required>
+        <span id="age-error" class="error-message" style="display: none;">Candidate is underage</span>
+      </div>
+      <div class="form-field">
+        <label for="donor-gender">Gender:</label>
+        <select id="donor-gender" name="donor-gender" required>
+          <option value="" disabled selected>Select your gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label for="donor-blood-group">Blood Group:</label>
+        <select id="donor-blood-group" name="donor-blood-group" required>
+          <option value="" disabled selected>Select your blood group</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+        </select>
+      </div>
+      <div class="form-field full-width">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Receive Section with Form -->
+  <section id="receive" class="section">
+    <h2>Receive Blood</h2>
+    <p>Need blood? Fill the below form.</p>
+    <form class="receiver-form">
+      <div class="form-field">
+        <label for="receiver-name">Name:</label>
+        <input type="text" id="receiver-name" name="receiver-name" required>
+      </div>
+      <div class="form-field">
+        <label for="receiver-age">Age:</label>
+        <input type="number" id="receiver-age" name="receiver-age" required>
+      </div>
+      <div class="form-field">
+        <label for="receiver-gender">Gender:</label>
+        <select id="receiver-gender" name="receiver-gender" required>
+          <option value="" disabled selected>Select your gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label for="receiver-blood-group">Blood Group:</label>
+        <select id="receiver-blood-group" name="receiver-blood-group" required>
+          <option value="" disabled selected>Select your blood group</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+        </select>
+      </div>
+      <div class="form-field full-width">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Blood Availability Section -->
+  <section id="availability" class="section">
+    <h2>Blood Availability</h2>
+    <p>Check the current availability of different blood groups:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Blood Group</th>
+          <th>Availability</th>
+          <th>Total Units</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>A+</td>
+          <td>Available</td>
+          <td>20 units</td>
+        </tr>
+        <tr>
+          <td>A-</td>
+          <td>Limited</td>
+          <td>10 units</td>
+        </tr>
+        <tr>
+          <td>B+</td>
+          <td>Available</td>
+          <td>25 units</td>
+        </tr>
+        <tr>
+          <td>B-</td>
+          <td>Limited</td>
+          <td>8 units</td>
+        </tr>
+        <tr>
+          <td>AB+</td>
+          <td>Available</td>
+          <td>15 units</td>
+        </tr>
+        <tr>
+          <td>AB-</td>
+          <td>Low Stock</td>
+          <td>5 units</td>
+        </tr>
+        <tr>
+          <td>O+</td>
+          <td>Available</td>
+          <td>30 units</td>
+        </tr>
+        <tr>
+          <td>O-</td>
+          <td>Critical</td>
+          <td>2 units</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Compatibility Section -->
+  <section id="compatibility" class="section">
+    <h2>Blood Compatibility</h2>
+    <p>Check which blood groups are compatible for donation and receiving:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Donor Blood Group</th>
+          <th>Compatible Recipient Blood Groups</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>A+</td>
+          <td>A+, AB+</td>
+        </tr>
+        <tr>
+          <td>A-</td>
+          <td>A+, A-, AB+, AB-</td>
+        </tr>
+        <tr>
+          <td>B+</td>
+          <td>B+, AB+</td>
+        </tr>
+        <tr>
+          <td>B-</td>
+          <td>B+, B-, AB+, AB-</td>
+        </tr>
+        <tr>
+          <td>AB+</td>
+          <td>AB+</td>
+        </tr>
+        <tr>
+          <td>AB-</td>
+          <td>AB+, AB-</td>
+        </tr>
+        <tr>
+          <td>O+</td>
+          <td>O+, A+, B+, AB+</td>
+        </tr>
+        <tr>
+          <td>O-</td>
+          <td>All Blood Groups</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- About Blood & Blood Types Section -->
+  <section id="info" class="section">
+    <h2 class="center-heading">About Blood & Blood Types</h2>
+    <!-- Universal Donor & Recipient Boxes -->
+    <div class="box-container">
+      <div class="info-box">
+        <h3><span class="icon">🔴</span> Universal Donor</h3>
+        <p>O-negative is known as the universal donor, as it can be given to patients of all blood types.</p>
+      </div>
+      <div class="info-box">
+        <h3><span class="icon">🔵</span> Universal Recipient</h3>
+        <p>AB-positive is known as the universal recipient, as individuals with this blood type can receive from any donor.</p>
+      </div>
+    </div>
+    <!-- Diseases and Precautions Boxes -->
+    <div class="box-container">
+      <div class="info-box">
+        <h3><span class="icon">⚠️</span> Diseases Transmitted Through Blood</h3>
+        <ul>
+          <li>Hepatitis B and C</li>
+          <li>HIV/AIDS</li>
+          <li>Malaria</li>
+          <li>Syphilis</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3><span class="icon">✅</span> Precautions to Avoid Blood-borne Diseases</h3>
+        <ul>
+          <li>Always use sterile needles and syringes.</li>
+          <li>Ensure proper screening of donated blood.</li>
+          <li>Practice safe blood transfusion protocols.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Frequently Asked Questions Section -->
+  <section id="faq" class="section">
+    <h2>Frequently Asked Questions</h2>
+    <!-- FAQ Item 1 -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="question-text">1. Who can donate blood?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        Generally, healthy individuals aged 18-65 and weighing at least 50kg can donate blood.
+      </div>
+    </div>
+    <!-- FAQ Item 2 -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="question-text">2. How often can I donate blood?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        You can donate blood every 12 weeks (for men) or 16 weeks (for women).
+      </div>
+    </div>
+    <!-- FAQ Item 3 -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="question-text">3. Is blood donation safe?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        Yes, it is safe. Sterile equipment is used, and there is no risk of infection.
+      </div>
+    </div>
+    <!-- FAQ Item 4 -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="question-text">4. How long does blood donation take?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        The process takes about 45 minutes, including registration, donation, and post-donation rest.
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency Helpline Section -->
+  <section id="helpline" class="section">
+    <h2 class="center-heading">Emergency Helpline Numbers</h2>
+    <ul class="helpline-list">
+      <li><strong>National Blood Donor Helpline:</strong> 1800-180-1111</li>
+      <li><strong>Ambulance Services:</strong> 108</li>
+      <li><strong>Medical Emergency:</strong> 112</li>
+      <li><strong>Blood Bank Support:</strong> +1-800-BLOOD</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 BloodWise. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Toggle FAQ answer with slow transition and arrow rotation
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const arrow = question.querySelector('.faq-arrow');
+        if (answer.classList.contains('active')) {
+          answer.classList.remove('active');
+          arrow.style.transform = 'rotate(0deg)';
+        } else {
+          answer.classList.add('active');
+          arrow.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+    // Validate donor form age
+    document.querySelector('.donor-form').addEventListener('submit', function(e) {
+      const ageInput = document.getElementById('donor-age');
+      const age = parseInt(ageInput.value, 10);
+      const errorSpan = document.getElementById('age-error');
+      if (age < 18) {
+        e.preventDefault();
+        errorSpan.style.display = 'block';
+      } else {
+        errorSpan.style.display = 'none';
+      }
+    });
+    // Toggle the menu dropdown with subtle animation when the menu icon is clicked
+    document.querySelector('.menu-icon').addEventListener('click', function() {
+      document.querySelector('.menu-dropdown').classList.toggle('active');
+    });
+    // Sign in/Sign out functionality for Sign Up button
+    let signedIn = false;
+    const signupButton = document.querySelector('.signup-button');
+    const signupModal = document.getElementById('signup-modal');
+    const closeModal = document.getElementById('close-modal');
+    signupButton.addEventListener('click', () => {
+      if (signedIn) {
+        // Confirm sign out
+        if (confirm("Are you sure you want to sign out?")) {
+          signedIn = false;
+          signupButton.textContent = "Sign Up";
+          alert("Signed out successfully.");
+        }
+      } else {
+        // Show sign up modal
+        signupModal.style.display = 'block';
+      }
+    });
+    // Sign up form submission simulation
+    document.querySelector('.signup-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      signedIn = true;
+      signupButton.textContent = "Sign Out";
+      signupModal.style.display = 'none';
+      alert("Signed in successfully.");
+    });
+    // Close modal when clicking on the close button
+    closeModal.addEventListener('click', () => {
+      signupModal.style.display = 'none';
+    });
+    // Close modal when clicking outside the modal content
+    window.addEventListener('click', (e) => {
+      if (e.target === signupModal) {
+        signupModal.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+
+</html>
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="PHp1alP-v301sF79hDeDp";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
